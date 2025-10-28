@@ -1,0 +1,6 @@
+#!/bin/bash
+clear
+javac -d . CODE/*.java
+echo "Made with LFYSG3D"
+java LFYSG3D.Main
+
