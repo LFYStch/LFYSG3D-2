@@ -1,7 +1,7 @@
 package LFYSG3D;
 
 import java.awt.*;
-import java.awt.KeyListener.*;
+import java.awt.event.*;
 
 public class MainCode{
 	public static void run(Graphics2D g2d, int width, int height, dP context){
