@@ -151,7 +151,7 @@ double[] computeBarycentric(double x1, double y1, double x2, double y2, double x
 }
 public void update(){
   repaint();
-  game.Update();
+  game.Update(this);
 }
 }
 
