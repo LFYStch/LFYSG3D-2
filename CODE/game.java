@@ -1,63 +1,30 @@
-package LFYSG3D;
+public class game {
+    public static BufferedImage texture1; // ← this is the shared texture
 
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.imageio.*;
-
-public class game{
-	public void loadTextures() {
+    public void loadTextures() {
         try {
-            BufferedImage texture1 = ImageIO.read(new File("dir.png"));
-            
+            texture1 = ImageIO.read(new File("dir.png")); // ← assign to the static field
         } catch (IOException e) {
             System.err.println("Texture load failed.");
             e.printStackTrace();
         }
     }
-	public game(){
-		loadTextures();
-	}
-	public static spawner sp = new spawner();
-	public static void run(Graphics2D g2d, int width, int height, dP context){
-		context.drawMesh(sp.LFYS(0,0,25,0,context.i,context.i),g2d,texture1);
-	}
-	public static void Update(dP context){
-		context.i+=0.1;
-	}
-}
-class KeyHandler implements KeyListener{
-	//vars for wut u want
-	public KeyHandler(/* Stuff u want to do */){
 
-	}
-	@Override
-    public void keyTyped(KeyEvent e) {
-       
+    public game() {
+        loadTextures(); // ← loads into texture1 before run() is ever called
     }
 
-    @Override
-    public void keyPressed(KeyEvent e) {
-       
+    public static spawner sp = new spawner();
+
+    public static void run(Graphics2D g2d, int width, int height, dP context) {
+        if (texture1 == null) {
+            System.err.println("run(): texture1 is null — skipping drawMesh.");
+            return;
+        }
+        context.drawMesh(sp.LFYS(0, 0, 25, 0, context.i, context.i), g2d, texture1);
     }
 
-    @Override
-    public void keyReleased(KeyEvent e) {
-        
+    public static void Update(dP context) {
+        context.i += 0.1;
     }
-
-}
-class spawner {
-    Objloader loader = new Objloader();
-	public spawner(){}
-
-    
-    public mesh LFYS(double x, double y, double z, int aI, double theta, double psi) {
-    
-    GameObject LFYS = new GameObject(new mesh[]{
-        loader.load("Cube.obj",x,y,z,1,1,1)
-    }, new AABB(new vec3(0, 0, 0, 0, 0), new vec3(0, 0, 0, 0, 0)), theta, psi, x, y, z);
-    return LFYS.getMesh(aI);
-}
-
 }
