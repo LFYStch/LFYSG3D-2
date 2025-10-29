@@ -59,7 +59,7 @@ class dP extends JPanel {
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g2d = (Graphics2D) g;
-        MainCode.run(g2d, 500,500,this);
+        game.run(g2d, 500,500,this);
     }
     //No edits past here! >:(
    public void drawMesh(mesh ts, Graphics2D g2d, BufferedImage texture) {
@@ -151,7 +151,7 @@ double[] computeBarycentric(double x1, double y1, double x2, double y2, double x
 }
 public void update(){
   repaint();
-  i+=0.01;
+  game.Update();
 }
 }
 
