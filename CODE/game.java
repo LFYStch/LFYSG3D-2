@@ -8,7 +8,7 @@ public class game{
 		context.drawMesh(context.sp.LFYS(0,0,25,0,context.i,context.i),g2d,context.texture1);
 	}
 	public static void Update(dP context){
-		context.i++;
+		context.i+=0.1;
 	}
 }
 class KeyHandler implements KeyListener{
