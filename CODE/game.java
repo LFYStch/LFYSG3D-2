@@ -7,6 +7,9 @@ public class MainCode{
 	public static void run(Graphics2D g2d, int width, int height, dP context){
 		context.drawMesh(context.sp.LFYS(0,0,25,0,context.i,context.i),g2d,context.texture1);
 	}
+	public static void update(dP context){
+		context.i++;
+	}
 }
 class KeyHandler implements KeyListener{
 	//vars for wut u want
