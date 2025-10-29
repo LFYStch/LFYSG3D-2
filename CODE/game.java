@@ -4,9 +4,21 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class game{
+	public void loadTextures() {
+        try {
+            BufferedImage texture1 = ImageIO.read(new File("dir.png"));
+            
+        } catch (IOException e) {
+            System.err.println("Texture load failed.");
+            e.printStackTrace();
+        }
+    }
+	public game(){
+		loadTextures();
+	}
 	public static spawner sp = new spawner();
 	public static void run(Graphics2D g2d, int width, int height, dP context){
-		context.drawMesh(sp.LFYS(0,0,25,0,context.i,context.i),g2d,context.texture1);
+		context.drawMesh(sp.LFYS(0,0,25,0,context.i,context.i),g2d,texture1);
 	}
 	public static void Update(dP context){
 		context.i+=0.1;
