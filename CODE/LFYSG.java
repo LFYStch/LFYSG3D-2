@@ -30,7 +30,7 @@ class dP extends JPanel {
     vec3 cam;
     double camYaw, camPitch;
     vec3 light_source1;
-    BufferedImage texture1;
+    
    
     float alpha = 0.5f;
     double i = 0;
@@ -45,15 +45,7 @@ class dP extends JPanel {
 
     }
 
-    public void loadTextures() {
-        try {
-            texture1 = ImageIO.read(new File("dir.png"));
-            
-        } catch (IOException e) {
-            System.err.println("Texture load failed.");
-            e.printStackTrace();
-        }
-    }
+    
     //Main drawloop starts here! :)
     @Override
     protected void paintComponent(Graphics g) {
