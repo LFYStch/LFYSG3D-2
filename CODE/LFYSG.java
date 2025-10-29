@@ -31,7 +31,7 @@ class dP extends JPanel {
     double camYaw, camPitch;
     vec3 light_source1;
     BufferedImage texture1;
-    spawner sp;
+   
     float alpha = 0.5f;
     double i = 0;
 
@@ -42,7 +42,7 @@ class dP extends JPanel {
         camYaw = 0;
         camPitch = 0;
         loadTextures();
-        sp = new spawner();
+
     }
 
     public void loadTextures() {
