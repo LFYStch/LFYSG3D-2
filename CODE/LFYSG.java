@@ -8,8 +8,8 @@ import javax.imageio.*;
 
 
 
-public class Main {
-    public Main(){
+public class LFYSG {
+    public LFYSG(){
         JFrame w = new JFrame();
         dP d = new dP();
         w.setTitle("3D Test");
@@ -21,7 +21,7 @@ public class Main {
         new javax.swing.Timer(50, e -> d.update()).start();
     }
     public static void main(String[] args) {
-        new Main();
+        new LFYSG();
     }
 }
 
